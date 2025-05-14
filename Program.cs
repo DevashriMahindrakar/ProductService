@@ -33,7 +33,7 @@ builder.Services.AddAuthentication(options =>
             ValidateAudience = true,
             ValidAudience = jwtSettings.Audience,
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes("SuperSecretKey@345SuperSecretKey@345")
+                Encoding.UTF8.GetBytes(jwtSettings.SecretKey)
             )
         };
     });
